@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: nuclear-station
+
+nuclear-station:
+  performance:
+    10_000_000
