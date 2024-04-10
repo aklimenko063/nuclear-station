@@ -35,7 +35,7 @@ public class NuclearStation {
 
     public void start(int year) {
         log.info("Действие происходит в стране: {}", economicDepartment.getCountry());
-        for (int yearCount = 1 ; yearCount <= year ; yearCount++) {
+        for (int yearCount = 1; yearCount <= year; yearCount++) {
             startYear();
         }
         log.info("Атомная станция выработала всего {} киловатт/часов", totalAmountOfEnergyGenerated);
@@ -48,7 +48,7 @@ public class NuclearStation {
 
     private void startYear() {
         log.info("Атомная станция начала работу.");
-        for (int day = 1 ; day <= dayOfYear ; day++) {
+        for (int day = 1; day <= dayOfYear; day++) {
             try {
                 totalAmountOfYearEnergyGenerated += reactorDepartment.run();
                 reactorDepartment.stop();

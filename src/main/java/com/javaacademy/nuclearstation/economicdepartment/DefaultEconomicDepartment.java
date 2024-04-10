@@ -15,7 +15,8 @@ public class DefaultEconomicDepartment extends EconomicDepartment {
 
     @Override
     public BigDecimal computeYearIncomes(long countElectricity) {
-        log.error("Ошибка расчета стоимости электроэнергии! Не указан профиль экономического департамента для расчета.");
+        String message = "Ошибка расчета стоимости электроэнергии! Не указан профиль департамента для расчета.";
+        log.error(message);
         return ZERO;
     }
 }
