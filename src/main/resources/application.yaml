@@ -3,5 +3,10 @@ spring:
     name: nuclear-station
 
 nuclear-station:
-  performance:
-    10_000_000
+  performance: 10_000_000
+  day_of_year: 365
+
+economic_department:
+  country:
+  currency:
+  base_rate: 0

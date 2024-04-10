@@ -1,11 +1,16 @@
-package com.javaacademy.nuclearstation;
+package com.javaacademy.nuclearstation.securitydepartment;
 
+import com.javaacademy.nuclearstation.NuclearStation;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SecutiryDepartment {
+@Getter
+@Setter
+public class SecurityDepartment {
     @Autowired
     @Lazy
     private NuclearStation nuclearStation;
@@ -13,10 +18,6 @@ public class SecutiryDepartment {
 
     public void addAccident() {
         accidentCountPeriod += 1;
-    }
-
-    public int getCountAccidents() {
-        return accidentCountPeriod;
     }
 
     public void reset() {

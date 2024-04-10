@@ -11,6 +11,8 @@ public abstract class EconomicDepartment {
     protected BigDecimal baseRate;
     @Value("${economic_department.currency}")
     protected String currency;
+    @Value("${economic_department.country}")
+    protected String country;
 
     public abstract BigDecimal computeYearIncomes(long countElectricity);
 }

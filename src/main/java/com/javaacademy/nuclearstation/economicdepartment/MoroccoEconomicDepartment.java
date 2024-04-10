@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static java.math.BigDecimal.ZERO;
 
@@ -22,11 +23,11 @@ public class MoroccoEconomicDepartment extends EconomicDepartment {
             countElectricity -= qtyElectricity;
             totalIncome = totalIncome.add(baseRate
                     .add(coefficient)
-                    .multiply(BigDecimal.valueOf(countElectricity)));
-            countElectricity = 0;
+                    .multiply(BigDecimal.valueOf(countElectricity)))
+                    .setScale(2, RoundingMode.HALF_UP);
         } else {
-            totalIncome = totalIncome.add(baseRate.multiply(BigDecimal.valueOf(countElectricity)));
-            countElectricity = 0;
+            totalIncome = totalIncome.add(baseRate.multiply(BigDecimal.valueOf(countElectricity)))
+                    .setScale(2, RoundingMode.HALF_UP);
         }
         return totalIncome;
     }
